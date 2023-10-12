@@ -1,6 +1,7 @@
 package ru.niseco.helpfullservice.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import ru.niseco.helpfullservice.entities.ToDoTask;
 
 public interface ToDoTaskRepository extends JpaRepository<ToDoTask, Long> {
