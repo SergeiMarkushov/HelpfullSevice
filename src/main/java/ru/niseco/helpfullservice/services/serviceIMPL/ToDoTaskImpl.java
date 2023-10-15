@@ -11,9 +11,7 @@ import ru.niseco.helpfullservice.repositories.ToDoTaskRepository;
 import ru.niseco.helpfullservice.services.ToDoTaskService;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Locale;
 import java.util.stream.Collectors;
 
 @Service
@@ -64,30 +62,8 @@ public class ToDoTaskImpl implements ToDoTaskService {
     @Override
     public ToDoTaskDTO makeDone(Long id) {
         ToDoTask taskToDone = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Задача не найдена"));
-        if (taskToDone.getCompleted()) {
-            taskToDone.setCompleted(false);
-            repository.save(taskToDone);
-            return modelMapper.map(taskToDone, ToDoTaskDTO.class);
-        }
         taskToDone.setCompleted(true);
         repository.save(taskToDone);
-
         return modelMapper.map(taskToDone, ToDoTaskDTO.class);
-    }
-
-    @Override
-    public String showDeadLine(Long id) {
-
-        ToDoTask task = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Задача не найдена"));
-
-        if (task.getDeadline() != null) {
-            LocalDateTime deadline = task.getDeadline();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy", new Locale("ru", "RU"));
-            String formattedDeadline = deadline.format(formatter);
-            return "{\"deadline\":\"" + formattedDeadline + "\"}"; // Обернуть строку в JSON объект
-        } else {
-            return "{\"deadline\":\"Дедлайн не установлен\"}"; // Обернуть строку в JSON объект
-        }
-
     }
 }

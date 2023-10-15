@@ -18,6 +18,4 @@ public interface ToDoTaskService {
     void deleteToDoTask(Long id);
 
     ToDoTaskDTO makeDone(Long id);
-
-    String showDeadLine(Long id);
 }

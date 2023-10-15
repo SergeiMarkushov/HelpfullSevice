@@ -19,7 +19,7 @@ public class ToDoTaskController {
      Мы инжектим (вставляем ссылку) класс, который потом будем использовать
     */
 
-    @GetMapping("/")
+    @GetMapping
     /*используется для маппинга методов контроллера с HTTP GET-запросами.
     Эта аннотация указывает, что метод должен быть вызван, когда клиент
     отправляет GET-запрос на указанный URL-путь. В нашем случае это localhost:8081/todo_list/.*/
@@ -54,11 +54,6 @@ public class ToDoTaskController {
     @PutMapping("/done/{id}")
     public ToDoTaskDTO makeDone(@PathVariable Long id) {//метод для отметки задачи "Сделано"
         return toDoTaskService.makeDone(id);//у сервиса вызываем метод "сделано" и передаем id
-    }
-
-    @GetMapping("/show_deadline/{id}")
-    public String showDeadline(@PathVariable Long id) {
-        return toDoTaskService.showDeadLine(id);
     }
 
 }
