@@ -20,18 +20,24 @@ public class ToDoTask {
     @GeneratedValue(strategy = GenerationType.IDENTITY)//генерация последовательности для ID поля сущности.
     @Column(name = "id")//название колонки id, NotNull
     private Long id; // Bigserial \ bigint primarykey
+
     @Column(name = "title", nullable = false)//название колонки,NotNull
     private String title;
+
     @Column(name = "description")//название колонки
     private String description;
+
     @Column(name = "completed", columnDefinition = "boolean default false")//название колонки и по дефолту все значения false
     private Boolean completed;
+
     @CreationTimestamp//аннотация для даты создания
     @Column(name = "created_at")//название колонки
     private LocalDateTime createdAt;
+
     @UpdateTimestamp//аннотация для даты обновления
     @Column(name = "updated_at")//название колонки
     private LocalDateTime updated_at;
+
     @Column(name = "deadline")//название колонки
     private LocalDateTime deadline;
 
