@@ -20,13 +20,17 @@ public class Notes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
     @Column(name = "title", nullable = false)
     private String title;
+
     @Column(name = "content")
     private String content;
+
     @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updated_at;
