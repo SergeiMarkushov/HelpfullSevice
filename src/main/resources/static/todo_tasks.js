@@ -39,6 +39,10 @@ angular.module('app', []).controller('taskController', function ($scope, $http) 
             });
     }
 
+    $scope.loadHomePage = function () {
+        window.location.href = 'http://localhost:8081/home.html';
+    };
+
     $scope.loadTasks();
 
 

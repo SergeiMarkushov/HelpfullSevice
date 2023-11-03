@@ -9,8 +9,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import ru.niseco.helpfullservice.entities.Role;
 import ru.niseco.helpfullservice.entities.User;
+import ru.niseco.helpfullservice.exceptions.ResourceNotFoundException;
 import ru.niseco.helpfullservice.repositories.UserRepository;
-import ru.niseco.helpfullservice.services.UserService;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserDetailsService {
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = findByUsername(username).get();
+        User user = findByUsername(username).orElseThrow(() -> new ResourceNotFoundException("Пользователь не найден"));
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), mapRolesToAuthorities(user.getRoles()));
     }
 

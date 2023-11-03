@@ -9,38 +9,36 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
-    <script src="todo_tasks.js"></script>
+    <script src="home.js"></script>
 
-    <title>Полезный сервис</title>
+    <title>Helpful Service</title>
 </head>
 
 <body>
 
-<div class="container" ng-controller="taskController">
-    <h1>ToDoList</h1>
+<div class="container" ng-controller="homeController">
+    <h1>Полезный сервис</h1>
+    <img src="helpful.png", alt="logo">
     <table class="table table-hover">
         <tr>
-            <td>ID</td>
-            <td>Название</td>
-            <td>Сделано</td>
-            <td>Действия</td>
+            <td>Сервис</td>
+            <td>Перейти</td>
         </tr>
         <tbody>
-        <tr ng-repeat="task in tasksList">
-            <td>{{task.id}}</td>
-            <td>{{task.title}}</td>
-            <td>{{task.completed}}</td>
+        <tr>
+            <td>Заметки</td>
             <td>
-                <button class="btn btn-danger" ng-click="delete(task.id)">Удалить</button>
-                <button class="btn btn-info" ng-click="showDeadline(task.id)">Дедлайн</button>
-                <button class="btn btn-info" ng-click="showDescription(task.id)">Описание</button>
-                <button class="btn btn-warning" ng-click="updateTask(task.id)">Редактировать</button>
-                <button class="btn btn-success" ng-click="makeDone(task.id)">Сделано</button>
+                <button class="btn btn-info" ng-click="loadNotes()">СЮДА</button>
+            </td>
+        </tr>
+        <tr>
+            <td>ToDoList</td>
+            <td>
+                <button class="btn btn-info" ng-click="loadToDo()">СЮДА</button>
             </td>
         </tr>
         </tbody>
     </table>
-    <button class="btn btn-danger" ng-click="loadHomePage()">НА ГЛАВНУЮ</button>
 </div>
 </body>
 </html>
