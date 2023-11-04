@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/notes")
 public class NotesController {
     private final NoteService noteService;
-    @GetMapping("/")
+    @GetMapping
     public List<NotesDTO> showAllNotes(){
         return noteService.getAllNotes();
     }

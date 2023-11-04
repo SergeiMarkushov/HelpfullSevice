@@ -2,10 +2,13 @@ package ru.niseco.helpfullservice.services.serviceIMPL;
 
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import ru.niseco.helpfullservice.converters.ToDoTaskConverter;
 import ru.niseco.helpfullservice.dtos.ToDoTaskDTO;
 import ru.niseco.helpfullservice.entities.ToDoTask;
+import ru.niseco.helpfullservice.exceptions.AppError;
 import ru.niseco.helpfullservice.exceptions.ResourceNotFoundException;
 import ru.niseco.helpfullservice.repositories.ToDoTaskRepository;
 import ru.niseco.helpfullservice.services.ToDoTaskService;

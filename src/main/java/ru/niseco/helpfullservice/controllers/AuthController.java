@@ -2,7 +2,6 @@ package ru.niseco.helpfullservice.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,10 +16,5 @@ public class AuthController{
     @PostMapping("/auth")
     public ResponseEntity<?> createAuthToken(@RequestBody JwtRequest authRequest) {
         return authenticationService.authenticateUser(authRequest);
-    }
-
-    @GetMapping("/secured")
-    public String helloSecurity() {
-        return "Hello";
     }
 }

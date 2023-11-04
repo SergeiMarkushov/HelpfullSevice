@@ -1,6 +1,7 @@
 package ru.niseco.helpfullservice.controllers;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.niseco.helpfullservice.dtos.ToDoTaskDTO;
 import ru.niseco.helpfullservice.services.ToDoTaskService;
@@ -19,7 +20,7 @@ public class ToDoTaskController {
      Мы инжектим (вставляем ссылку) класс, который потом будем использовать
     */
 
-    @GetMapping("/")
+    @GetMapping
     /*используется для маппинга методов контроллера с HTTP GET-запросами.
     Эта аннотация указывает, что метод должен быть вызван, когда клиент
     отправляет GET-запрос на указанный URL-путь. В нашем случае это localhost:8081/todo_list/.*/

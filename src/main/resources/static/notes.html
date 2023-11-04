@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
     <script src="notes.js"></script>
 
-    <title>Helpful Service</title>
+    <title>Полезный сервис</title>
 </head>
 
 <body>
@@ -22,6 +22,7 @@
         <tr>
             <td>ID</td>
             <td>Название</td>
+            <td>Действия</td>
         </tr>
         <tbody>
         <tr ng-repeat="note in notesList">
@@ -35,7 +36,7 @@
         </tr>
         </tbody>
     </table>
-
+    <button class="btn btn-danger" ng-click="loadHomePage()">НА ГЛАВНУЮ</button>
 </div>
 </body>
 </html>
