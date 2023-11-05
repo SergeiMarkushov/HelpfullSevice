@@ -29,6 +29,10 @@ angular.module('app', []).controller('notesController', function ($scope, $http)
         window.location.href = 'http://localhost:8081/home.html';
     };
 
+    $scope.createTask = function () {
+        window.location.href = 'http://localhost:8081/createNote.html';
+    };
+
 
     $scope.loadNotes();
 
